@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<title>Marquee Row - 詳細設定ガイド</title>
+	<style>
+		body {
+			font-family: -apple-system, "Hiragino Sans", "Yu Gothic", Arial, sans-serif;
+			background: #1e1e1e;
+			color: #e6e6e6;
+			line-height: 1.7;
+			max-width: 720px;
+			margin: 0 auto;
+			padding: 32px 24px 64px;
+		}
+		h1 { font-size: 22px; margin-bottom: 4px; }
+		h2 { font-size: 16px; margin-top: 36px; border-bottom: 1px solid #3a3a3a; padding-bottom: 6px; }
+		code {
+			background: #2d2d2d;
+			padding: 1px 6px;
+			border-radius: 4px;
+			font-size: 13px;
+		}
+		table { border-collapse: collapse; margin: 12px 0; }
+		td, th { padding: 4px 12px 4px 0; text-align: left; vertical-align: top; }
+		.hint { opacity: .75; font-size: 13px; }
+		.langs a { color: #7ab8ff; }
+	</style>
+</head>
+<body>
+	<p class="langs">他の言語:<a href="index.html">English</a> · <a href="index.zh-TW.html">繁體中文</a></p>
+	<h1>Marquee Row — 詳細設定ガイド</h1>
+	<p class="hint">設定パネルには基本的なコントロールのみを残しています。詳しい使い方はこちらにまとめています。</p>
+
+	<h2>基本的な使い方</h2>
+	<p>「マーキーセグメント (Marquee Segment)」アクションを、同じ行(横方向の場合)または同じ列(縦方向の場合)のすべてのキーに配置し、同じ Group ID(デフォルトの <code>row1</code> でOK)を設定してください。グループ内のどれか1つのキーでテキスト・方向・速度・色を編集すると、他のキーも自動的に同期されます——1回入力するだけで済みます。各キーは自分の物理的な列/行位置に応じて、マーキーテキストの対応する部分を自動表示します。</p>
+
+	<h2>使用可能な変数(マーキーテキスト内で使用)</h2>
+	<table>
+		<tr><td><code>{{date}}</code></td><td>→ 2026/07/26</td></tr>
+		<tr><td><code>{{time}}</code></td><td>→ 09:05:03</td></tr>
+		<tr><td><code>{{HH:MM}}</code></td><td>→ 09:05</td></tr>
+		<tr><td><code>{{HH:MM:SS}}</code></td><td>→ 09:05:03</td></tr>
+		<tr><td><code>{{YYYY-MM-DD}}</code></td><td>→ 2026-07-26</td></tr>
+		<tr><td><code>{{weekday}}</code></td><td>→ 星期日(設定パネルの言語に関わらず、常に中国語表記で出力されます)</td></tr>
+	</table>
+	<p>個別トークン <code>{{YYYY}}</code> <code>{{MM}}</code> <code>{{DD}}</code> <code>{{HH}}</code> <code>{{mm}}</code> <code>{{ss}}</code> は自由なテキストに混ぜて使用できます。例:<code>現在 {{HH}}時{{mm}}分</code>。変数は毎秒自動更新されます。</p>
+
+	<h2>キー数</h2>
+	<p>スライダー自体に +/- ボタンはありませんが、つまみをクリックしてフォーカスした後は矢印キーで ±1 ずつ正確に調整できます。設定パネル上部に現在の値がリアルタイムで表示されます。</p>
+
+	<h2>フォント</h2>
+	<p>フォントは名前を直接指定する方式で、自動フォールバックはありません——インストールされていないフォント(Impact/Verdana/Comic Sans MS など Windows 専用フォントに多い)を選ぶと、直前に認識できたフォントのまま変わらず、反応していないように見えます。まずはシステム内蔵フォントで試してみてください(Mac の場合:PingFang TC / Georgia / Times New Roman / Courier New / Arial / Helvetica)。</p>
+
+	<h2>テキスト位置の微調整</h2>
+	<p>横スクロール時は上下方向、縦スクロール時は左右方向の微調整になります。</p>
+
+	<h2>スクロール方向と縦書き</h2>
+	<p>「上から下」「下から上」は縦書きモードで、日本語/韓国語に適しています。注意点として、縦書きモードはキーの「行」位置で順序を判断し、横書きモードは「列」位置で判断します——方向を切り替える際は、実際に配置するキーも行から列へ変更する必要があります。そうしないと、グループ内のキーがすべて同じ位置と判定され、画面が動いていないように見えてしまいます。</p>
+</body>
+</html>

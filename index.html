@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Marquee Row - 詳細設定說明</title>
+	<title>Marquee Row - Settings Guide</title>
 	<style>
 		body {
-			font-family: -apple-system, "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+			font-family: -apple-system, "Segoe UI", Arial, sans-serif;
 			background: #1e1e1e;
 			color: #e6e6e6;
 			line-height: 1.7;
@@ -24,36 +24,38 @@
 		table { border-collapse: collapse; margin: 12px 0; }
 		td, th { padding: 4px 12px 4px 0; text-align: left; vertical-align: top; }
 		.hint { opacity: .75; font-size: 13px; }
+		.langs a { color: #7ab8ff; }
 	</style>
 </head>
 <body>
-	<h1>Marquee Row 詳細設定說明</h1>
-	<p class="hint">設定面板裡的欄位只保留核心控制,詳細用法整理在這裡。</p>
+	<p class="langs">Read this in: <a href="index.zh-TW.html">繁體中文</a> · <a href="index.ja.html">日本語</a></p>
+	<h1>Marquee Row — Settings Guide</h1>
+	<p class="hint">The settings panel only keeps the core controls; the full details are here.</p>
 
-	<h2>基本使用方式</h2>
-	<p>把「跑馬燈片段 (Marquee Segment)」動作放到同一排(橫排方向)或同一列(直排方向)的每一顆鍵上,並保持相同的 Group ID(預設 <code>row1</code> 即可)。只要在其中任何一顆鍵的設定畫面編輯文字、方向、速度或顏色,整組的鍵都會自動同步——不需要每顆鍵都填一次。每顆鍵會依照它實際所在的欄位或列位置,自動顯示跑馬燈文字的對應片段。</p>
+	<h2>Basic Usage</h2>
+	<p>Place the "Marquee Segment" action on every key of a single row (for horizontal scrolling) or a single column (for vertical scrolling), and give them all the same Group ID (the default <code>row1</code> works fine). Editing the text, direction, speed, or colors on any one key in the group automatically syncs the rest — you only need to fill it in once. Each key automatically shows its own slice of the marquee text based on its physical column/row position.</p>
 
-	<h2>可用變數(跑馬燈文字裡使用)</h2>
+	<h2>Available Variables (for use inside the marquee text)</h2>
 	<table>
 		<tr><td><code>{{date}}</code></td><td>→ 2026/07/26</td></tr>
 		<tr><td><code>{{time}}</code></td><td>→ 09:05:03</td></tr>
 		<tr><td><code>{{HH:MM}}</code></td><td>→ 09:05</td></tr>
 		<tr><td><code>{{HH:MM:SS}}</code></td><td>→ 09:05:03</td></tr>
 		<tr><td><code>{{YYYY-MM-DD}}</code></td><td>→ 2026-07-26</td></tr>
-		<tr><td><code>{{weekday}}</code></td><td>→ 星期日(固定中文輸出,不受設定面板語言影響)</td></tr>
+		<tr><td><code>{{weekday}}</code></td><td>→ 星期日 (always rendered in Chinese, regardless of settings-panel language)</td></tr>
 	</table>
-	<p>進階單獨 token:<code>{{YYYY}}</code> <code>{{MM}}</code> <code>{{DD}}</code> <code>{{HH}}</code> <code>{{mm}}</code> <code>{{ss}}</code>,可以混在自訂文字裡,例如 <code>現在 {{HH}}點{{mm}}分</code>。變數每秒都會自動更新。</p>
+	<p>Individual tokens <code>{{YYYY}}</code> <code>{{MM}}</code> <code>{{DD}}</code> <code>{{HH}}</code> <code>{{mm}}</code> <code>{{ss}}</code> can be mixed into free text, e.g. <code>Now {{HH}}:{{mm}}</code>. Variables refresh every second.</p>
 
-	<h2>共幾顆鍵</h2>
-	<p>滑桿本身沒有 +/- 按鈕,但點一下滑鈕(讓它變成焦點)後,可以用鍵盤方向鍵每次精準 ±1。設定面板上方會即時顯示目前選到的值。</p>
+	<h2>Number of Keys</h2>
+	<p>The slider has no +/- buttons, but once it's focused (click the handle) you can nudge it ±1 at a time with the arrow keys. The settings panel shows the current value live above the slider.</p>
 
-	<h2>字型</h2>
-	<p>字型是直接指定名稱,不會自動 fallback——選到電腦上沒安裝的字型(常見於 Windows 專屬字型如 Impact/Verdana/Comic Sans MS)時,畫面會維持上一個能辨識的字型,看起來像沒反應。建議先用系統內建字型測試(Mac 上是 PingFang TC / Georgia / Times New Roman / Courier New / Arial / Helvetica)。</p>
+	<h2>Font</h2>
+	<p>The font is applied by exact name with no automatic fallback — if you pick a font that isn't installed (commonly Windows-only fonts like Impact/Verdana/Comic Sans MS), the display just keeps the last font it could resolve, which can look like nothing happened. Test with a built-in system font first (on Mac: PingFang TC / Georgia / Times New Roman / Courier New / Arial / Helvetica).</p>
 
-	<h2>文字置中位置微調</h2>
-	<p>橫排(左右移動)時是上下微調;直排(上下移動)時是左右微調。</p>
+	<h2>Text Centering Offset</h2>
+	<p>A vertical nudge when scrolling horizontally; a horizontal nudge when scrolling vertically.</p>
 
-	<h2>移動方向與直排</h2>
-	<p>「由上往下」「由下往上」是直排模式,適合日文/韓文。要注意的是:直排是靠鍵的「列」位置自動判斷順序,橫排則是靠「欄」位置——換方向時,實際擺放的鍵也要跟著從同一排改成同一欄,否則同組的鍵會判斷成同一個位置,畫面看起來像沒在動。</p>
+	<h2>Scroll Direction and Vertical Text</h2>
+	<p>"Top to bottom" and "bottom to top" are vertical modes, suited to Japanese/Korean. One thing to note: vertical mode determines order from each key's row position, while horizontal mode uses column position — when switching direction, the keys' physical layout needs to move from a row to a column too, otherwise every key in the group resolves to the same position and the display looks like it isn't moving.</p>
 </body>
 </html>
