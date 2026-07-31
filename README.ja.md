@@ -1,6 +1,8 @@
 # Marquee Row
 
-*他の言語:[English](README.md) · [繁體中文](README.zh-TW.md)*
+<p align="center">
+<a href="README.md">English</a> | <a href="README.zh-TW.md">繁體中文</a>
+</p>
 
 Stream Deck の一列(または一段)のキーをつなげて、1つの流れるマーキー表示に変えるプラグインです。同じ行のすべてのキーにこのアクションを配置すると、昔ながらの電光掲示板のように、行全体にわたって連続したスクロールテキストが表示されます。
 

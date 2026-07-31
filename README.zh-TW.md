@@ -1,6 +1,8 @@
 # Marquee Row
 
-*其他語言版本:[English](README.md) · [日本語](README.ja.md)*
+<p align="center">
+<a href="README.md">English</a> | <a href="README.ja.md">日本語</a>
+</p>
 
 一款把 Stream Deck 上的一整排(或一整欄)鍵組合成一個跑馬燈顯示區的外掛。把動作放到同一排的每一顆鍵上,這些鍵就會拼成一條連續的捲動文字,就像早期的跑馬燈跑字幕一樣。
 

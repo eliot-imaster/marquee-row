@@ -1,6 +1,8 @@
 # Marquee Row
 
-*Read this in: [繁體中文](README.zh-TW.md) · [日本語](README.ja.md)*
+<p align="center">
+<a href="README.zh-TW.md">繁體中文</a> | <a href="README.ja.md">日本語</a>
+</p>
 
 A Stream Deck plugin that turns a row (or column) of keys into a single scrolling marquee display. Place the action on every key of a row, and they render one continuous strip of text — like an old-school ticker — spanning the whole row.
 
