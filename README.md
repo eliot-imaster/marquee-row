@@ -44,7 +44,7 @@ Use these inside the marquee text; they re-evaluate every second.
 | `{{HH:MM}}` | 09:05 |
 | `{{HH:MM:SS}}` | 09:05:03 |
 | `{{YYYY-MM-DD}}` | 2026-07-26 |
-| `{{weekday}}` | 星期日 (always rendered in Chinese, regardless of settings-panel language) |
+| `{{weekday}}` | Sunday (matches whichever of the 8 languages your Stream Deck app is set to — en/ja/ko/zh_CN/zh_TW/de/es/fr — falling back to English otherwise) |
 
 Individual tokens `{{YYYY}}` `{{MM}}` `{{DD}}` `{{HH}}` `{{mm}}` `{{ss}}` can be mixed into free text, e.g. `Now {{HH}}:{{mm}}`.
 
