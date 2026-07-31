@@ -10,7 +10,7 @@ A Stream Deck plugin that turns a row (or column) of keys into a single scrollin
 
 - **Multi-key rendering** — one line of text scrolls seamlessly across as many keys as you assign to a group, using each key's physical column/row position to auto-detect its slice of the strip.
 - **Group sync** — every key in the same Group ID shares the same text, speed, colors, and direction. Edit any one key and the rest update automatically; you only type the text once.
-- **Four scroll directions** — right-to-left, left-to-right (horizontal), and top-to-bottom, bottom-to-top (vertical, with characters stacked for Japanese/Korean-style vertical text).
+- **Four scroll directions** — right-to-left, left-to-right (horizontal), and top-to-bottom, bottom-to-top (vertical, with characters stacked for Japanese, Korean, Simplified Chinese, and Traditional Chinese vertical text).
 - **Live variables** — `{{date}}`, `{{time}}`, `{{HH:MM}}`, `{{weekday}}`, and individual date/time tokens, refreshed every second.
 - **Customizable display** — font, font size, text/background color, scroll speed, repeat gap, and a position offset for centering.
 - **Localized settings panel** — English, Traditional Chinese, Simplified Chinese, Japanese, and Korean, following your Stream Deck app's language.
